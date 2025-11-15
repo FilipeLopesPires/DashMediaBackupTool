@@ -82,4 +82,4 @@ This tool was created out of personal necessity when existing open-source soluti
 
 ## Author
 
-I'm the sole author of this repository. For further information, please contact me at fsnap@protonmail.com.
+I'm the sole author of this repository. For further information, feel free to reach out.
