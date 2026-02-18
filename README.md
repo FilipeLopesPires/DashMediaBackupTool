@@ -76,6 +76,18 @@ python dash-media-backup-tool.py --manifest https://example.com/video.mpd --head
 - The tool automatically handles BaseURL resolution and template expansion
 - Failed downloads are retried with exponential backoff
 
+## Troubleshooting
+
+### 403 CLient Error: Forbidden / "Authentication Failed"
+
+This might happen when platforms like Cloudfront are involved. A workaround I have found for that particular scenario was the following:
+
+1. Open the web player that is capable of consuming the target streamed content.
+2. Open DevTools > Network tab before playing content.
+3. Reload page and check for downloaded `manifest.mpd` files.
+4. If there is more than one, copy the url from the one that isn't your original target url and use it in this script.
+
+
 ## Project Background
 
 This tool was created out of personal necessity when existing open-source solutions didn't meet specific requirements. While this script provides a lightweight Python solution for basic DASH media downloading, users with more complex needs may benefit from more feature-rich alternatives such as [dash-mpd-cli](https://github.com/emarsden/dash-mpd-cli), a comprehensive Rust-based tool with advanced features like muxing, subtitle support, and DRM handling. For production use or complex streaming scenarios, consider evaluating this or other alternatives first.
